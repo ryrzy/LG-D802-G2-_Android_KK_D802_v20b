@@ -1,10 +1,10 @@
 clear
-rm /home/ryrzy/android/output/g2/ramdisk/lib/modules/*.ko
+make clean
+rm /home/ryrzy/android/output/g2/system/lib/modules/*.ko
 rm /home/ryrzy/android/output/g2/zImage
 export PATH=$PATH:tools/lz4demo
-make clean
-make ARCH=arm g2-kt-perf_yoda_defconfig zImage -j3
+make ARCH=arm g2_d802_yoda_defconfig zImage -j3
 make modules
-find . -name "*.ko" -exec cp {} /home/ryrzy/android/output/g2/ramdisk/lib/modules \;
+find . -name "*.ko" -exec cp {} /home/ryrzy/android/output/g2/system/lib/modules \;
 cp arch/arm/boot/zImage /home/ryrzy/android/output/g2/zImage
 make clean
