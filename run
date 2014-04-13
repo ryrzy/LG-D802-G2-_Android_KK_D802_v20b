@@ -1,0 +1,10 @@
+clear
+rm /home/ryrzy/android/output/g2/ramdisk/lib/modules/*.ko
+rm /home/ryrzy/android/output/g2/zImage
+export PATH=$PATH:tools/lz4demo
+make clean
+make ARCH=arm g2-kt-perf_defconfig zImage -j3
+make modules
+find . -name "*.ko" -exec cp {} /home/ryrzy/android/output/g2/ramdisk/lib/modules \;
+cp arch/arm/boot/zImage /home/ryrzy/android/output/g2/zImage
+make clean
