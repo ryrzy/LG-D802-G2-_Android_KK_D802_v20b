@@ -1,6 +1,6 @@
 ui_print(" ");
 ui_print("- Yoda kernel for LG G2 -");
-ui_print("         D802 v3.5       ");
+ui_print("         D802 v4.0       ");
 ui_print("    Android 4.4.2 v20b   ");
 ui_print("-------------------------");
 ui_print(" ");
