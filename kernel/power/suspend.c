@@ -341,7 +341,7 @@ static void pm_suspend_marker(char *annotation)
  * Check if the value of @state represents one of the supported states,
  * execute enter_state() and update system suspend statistics.
  */
-#ifdef CONFIG_MACH_MSM8974_B1_KR
+#if 1 /* Boost CPU When wakeup */
 bool suspend_marker_entry = false;
 #endif
 int pm_suspend(suspend_state_t state)
@@ -352,7 +352,7 @@ int pm_suspend(suspend_state_t state)
 		return -EINVAL;
 
 	pm_suspend_marker("entry");
-#ifdef CONFIG_MACH_MSM8974_B1_KR
+#if 1 /* Boost CPU When wakeup */
 	suspend_marker_entry = true;
 #endif
 	error = enter_state(state);
@@ -363,7 +363,7 @@ int pm_suspend(suspend_state_t state)
 		suspend_stats.success++;
 	}
 	pm_suspend_marker("exit");
-#ifdef CONFIG_MACH_MSM8974_B1_KR
+#if 1 /* Boost CPU When wakeup */
 	suspend_marker_entry = false;
 #endif
 	return error;
