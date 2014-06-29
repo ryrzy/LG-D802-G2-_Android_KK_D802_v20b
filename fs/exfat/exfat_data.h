@@ -56,3 +56,5 @@
 #define BUF_CACHE_HASH_SIZE     64
 
 #endif /* _EXFAT_DATA_H */
+
+/* end of exfat_data.h */

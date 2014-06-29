@@ -204,3 +204,5 @@ typedef struct {
 s32 FsReleaseCache(struct super_block *sb);
 
 #endif /* _EXFAT_API_H */
+
+/* end of exfat_api.h */
