@@ -872,7 +872,7 @@ static int sched_rt_runtime_exceeded(struct rt_rq *rt_rq)
 			if (!once) {
 				once = true;
 #ifdef CONFIG_MACH_LGE
-				printk_sched("sched: RT throttling activated => task_name [%s]\n", \
+				printk_deferred("sched: RT throttling activated => task_name [%s]\n", \
 					rt_rq->rq->curr->comm);
 #else
 				printk_deferred("sched: RT throttling activated\n");
